@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>📦 Sistema de Estoque</h1>
+        <p>Controle de produtos e movimentações</p>
+    </header>
+
+    <main>
+
+        <section class="dashboard">
+
+            <div class="card">
+                <h3>Total de Produtos</h3>
+                <strong id="totalProdutos">0</strong>
+            </div>
+
+            <div class="card">
+                <h3>Itens em Estoque</h3>
+                <strong id="totalItens">0</strong>
+            </div>
+
+            <div class="card">
+                <h3>Valor do Estoque</h3>
+                <strong id="valorEstoque">R$ 0,00</strong>
+            </div>
+
+            <div class="card alerta">
+                <h3>Estoque Baixo</h3>
+                <strong id="estoqueBaixo">0</strong>
+            </div>
+
+        </section>
+
+        <section class="formulario">
+
+            <h2>Cadastrar Produto</h2>
+
+            <form id="formProduto">
+
+                <div class="campo">
+                    <label>Código</label>
+                    <input type="text" id="codigo" required>
+                </div>
+
+                <div class="campo">
+                    <label>Nome do produto</label>
+                    <input type="text" id="nome" required>
+                </div>
+
+                <div class="campo">
+                    <label>Categoria</label>
+                    <input type="text" id="categoria" required>
+                </div>
+
+                <div class="campo">
+                    <label>Quantidade</label>
+                    <input type="number" id="quantidade" min="0" required>
+                </div>
+
+                <div class="campo">
+                    <label>Preço</label>
+                    <input type="number" id="preco" min="0" step="0.01" required>
+                </div>
+
+                <button type="submit">Cadastrar Produto</button>
+
+            </form>
+
+        </section>
+
+        <section class="estoque">
+
+            <div class="topo-estoque">
+                <h2>Produtos em Estoque</h2>
+
+                <input
+                    type="text"
+                    id="pesquisa"
+                    placeholder="🔎 Pesquisar produto..."
+                >
+            </div>
+
+            <div class="tabela-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Produto</th>
+                            <th>Categoria</th>
+                            <th>Quantidade</th>
+                            <th>Preço</th>
+                            <th>Valor Total</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaProdutos"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
